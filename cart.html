@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTYg-5xoABqRT56mDPAEx1XcJ74E8K5eYrIxkB_ZIzexfAOZZ0Z" sizes="64x64">
+    <script src="https://kit.fontawesome.com/09ea9ed7f5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="cart.js">
+    <title>Cart</title>
+</head>
+<body>
+    <div id="navbar">
+        
+        <a href="./index.html"><img
+            src="https://www.netmeds.com/assets/gloryweb/images/home-logo-netmeds-new.svg"
+            alt=""
+          /></a>
+        <div id="bar">
+            <select name="" id="">
+                <option value="">Deliver To 118000</option>
+            </select>
+      </select>
+            <p style="color: #6d7583">|</p>
+            <input  placeholder="Search for medicine and wellness products.." type="text" name="" id="">
+            <button id="search" type="submit"><i class="fa-solid fa-magnifying-glass-plus fa-2x" style="color:#2874F0;"></i></button>
+        </div>
+        <div>
+            <i class="fa-solid fa-receipt fa-2x"></i>
+            <p>Upload </p>
+        </div>
+        <div>
+           <i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+            <p>Cart</p></a>
+           
+        </div>
+           
+        </div>
+        <div id="head">
+           
+        </div>
+        <div id="noitems">
+            
+        </div>
+        <div id="Cartitems">
+
+        </div>
+        
+          
+</body>
+</html>
+<script>
+  var payarr=[];
+   document.addEventListener("DOMContentLoaded", function() {
+  var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  var Deljob=JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  function Del(item) {
+  var index = cartItems.findIndex(function(i) {
+    return i.id === item.id;
+  });
+  if (index!==-1) {
+    cartItems.splice(index, 1);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    var elem = document.getElementById("item" + item.id);
+    elem.remove();
+  }
+}
+
+
+  if (cartItems.length > 0) {
+    var cartBox = document.getElementById("Cartitems");
+
+    cartItems.map(function(item,Index) {
+      var itemDiv = document.createElement("div");
+      itemDiv.setAttribute("id", "item" + item.id);
+      cartBox.appendChild(itemDiv);
+
+      var itemImage = document.createElement("img");
+      itemImage.src = item.image_url;
+      itemDiv.appendChild(itemImage);
+
+      var itemName = document.createElement("h2");
+      itemName.textContent = item.Name;
+      itemDiv.appendChild(itemName);
+      itemName.style.color="rgb(11, 18, 25)";
+      itemName.style.fontSize="16px";
+      itemName.style.lineHeight="24px";
+      itemName.style.fontWeight="300";
+    
+
+      var itemPrice = document.createElement("h4");
+      itemPrice.textContent = "Price:₹" + item.Price;
+      itemDiv.appendChild(itemPrice);
+      itemPrice.style.color="rgb(239, 66, 129";
+      itemPrice.style.fontSize="16px";
+      itemPrice.style.lineHeight="normal";
+      itemPrice.style.fontWeight="300";
+
+      var itemMRP = document.createElement("h5");
+      itemMRP.textContent = "MRP: " + item.MRP;
+      itemDiv.appendChild(itemMRP);
+      itemMRP.style.color="rgba(21, 27, 57, 0.6)";
+      itemMRP.style.fontSize="12px";
+      itemMRP.style.lineHeight="18px";
+      itemMRP.style.fontWeight="300";
+      itemMRP.style.textDecoration="line-through";
+
+
+      var itemQuantity = document.createElement("h5");
+      itemQuantity.textContent = "Quantity: " + item.quantity;
+      itemDiv.appendChild(itemQuantity);
+      itemQuantity.style.color=" rgb(239, 66, 129)";
+      itemQuantity.style.fontSize="12px";
+      itemQuantity.style.lineHeight="20px";
+      itemQuantity.style.fontWeight="300";
+
+      var itemAmount = document.createElement("h3");
+      itemAmount.textContent = "Amount Payable: ₹" + item.Price * item.quantity;
+      itemDiv.appendChild(itemAmount);
+      itemAmount.style.color = "rgb(40, 116, 240)";
+      itemAmount.style.fontSize = "16px";
+      itemAmount.style.lineHeight = "24px";
+      itemAmount.style.fontWeight = "300";
+
+
+      var buttonDiv = document.createElement("div");
+      itemDiv.appendChild(buttonDiv);
+
+      var removeButton = document.createElement("button");
+      var removeIcon = document.createElement("i");
+      removeIcon.setAttribute("class", "fa-solid fa-trash-can fa-3x");
+      removeIcon.style.color = "#eb0a0a";
+      removeButton.addEventListener("click", function() {
+        alert("Item Removed Succesfully");
+  Del(Index);
+ 
+});
+      removeButton.appendChild(removeIcon);
+      buttonDiv.appendChild(removeButton);
+      var addButton = document.createElement("button");
+      var addIcon = document.createElement("i");
+      addIcon.setAttribute("class", "fa-sharp fa-solid fa-cart-plus fa-3x");
+      addIcon.style.color = "#59ca1c";
+      addButton.addEventListener("click", function() {
+      window.location.href = "./index.html";
+    });
+    var PayButton = document.createElement("button");
+var payIcon = document.createElement("i");
+payIcon.textContent="PAY NOW"
+payIcon.style.backgroundcolor = "black";
+PayButton.addEventListener("click", function() 
+{
+  window.location.href = "./payment.html"
+
+   payobj=
+   {
+     mrp:item.MRP,
+     quantity:item.quantity,
+     amount:textContent = item.Price
+   }
+   payarr.push(payobj)
+   localStorage.setItem("paymentDetails",JSON.stringify(payarr));
+
+});
+PayButton.appendChild(payIcon);
+buttonDiv.appendChild(PayButton); 
+      addButton.appendChild(addIcon);
+      buttonDiv.appendChild(addButton);
+      addIcon.style.color = "#59ca1c";
+    });
+  } else {
+    var img = document.createElement("img");
+    var head = document.createElement("h1");
+    var para = document.createElement("p");
+    var button = document.createElement("button");
+
+    img.src = "https://www.netmeds.com/msassets/images/emptycart.svg";
+    img.alt = "Empty cart";
+    head.textContent = "Your Cart is empty!";
+    para.innerHTML = "You have no items added in the cart. <br> Explore and add products you like!";
+    button.textContent = "ADD PRODUCTS";
+
+    button.addEventListener("click", function() {
+      window.location.href = "./index.html";
+    });
+      var head1=document.createElement("h2");
+     head1.textContent="My Cart";
+     document.getElementById("head").append(head1)
+    var cart1 = document.createElement("div");
+    cart1.id = "cart1";
+    cart1.append(img, head, para, button);
+
+    var cart2 = document.createElement("div");
+    cart2.id = "cart2";
+    var h2 = document.createElement("h2");
+    h2.textContent = "SAVED FOR LATER";
+    var h3 = document.createElement("h3");
+    h3.textContent = "No items in save for later";
+    cart2.append(h2, h3);
+
+    var noitems = document.createElement("div");
+    noitems.id = "noitems";
+    noitems.append(cart1, cart2);
+
+    document.querySelector("body").append(noitems);
+  }
+});
+
+</script>

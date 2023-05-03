@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTYg-5xoABqRT56mDPAEx1XcJ74E8K5eYrIxkB_ZIzexfAOZZ0Z" sizes="64x64">
+    <script src="https://kit.fontawesome.com/09ea9ed7f5.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #nav{
+            margin:auto;
+            background-color: #19b0c7;
+            width: 100%;
+            padding-left: 10%;
+            height: 90px;
+            
+        }
+        #nav img{
+            width: 12%;
+            padding-top: 1%;
+        }
+        #pay{
+            background-color: rgb(25, 5, 43);
+            display: flex;
+            width: 70%;
+            justify-content:space-between;
+            margin: auto;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+        }
+        #gpay{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 140%;
+            margin: auto;
+            margin-left: 48%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 3%;
+            padding-right: 3%;
+            padding-bottom: 2%;
+        }
+        .gpay1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .gpay2{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .gpay2 p{
+            padding-right: 80%;
+        }
+
+        #paytm{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 44%;
+            margin: auto;
+            margin-right: 41%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+            padding-bottom: 1%;
+        }
+        .paytm1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .paytm2{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .paytm2 p{
+            padding-right: 70%;
+        }
+        .paytm2 a{
+            text-decoration: none;
+            color: rgb(242, 133, 151);
+        }
+       
+        .paytm3{
+            text-align: left;
+            padding-left: 75px;
+            font-size: small;
+        }
+        #ppay{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 44%;
+            margin: auto;
+            margin-right: 41%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+            padding-bottom: 1%;
+        }
+        .ppay1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .ppay2{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .ppay2 p{
+            padding-right: 75%;
+        }
+        .ppay2 img{
+            width: 90%;
+        }
+
+        #simpl{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 44%;
+            margin: auto;
+            margin-right: 41%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+            padding-bottom: 1%;
+        }
+        .sim1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .sim2{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .sim2 p{
+            padding-right: 80%;
+        }
+        .sim2 img{
+            width: 50%;
+        }
+        .sim3{
+            text-align: left;
+            padding-left: 65px;
+        }
+        .sim3 p{
+            font-size: small;
+        }
+
+        #cash{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 44%;
+            margin: auto;
+            margin-right: 41%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+            padding-bottom: 1%;
+        }
+        .cash1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .cash2{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .cash2 p{
+            padding-right: 60%;
+        }
+       
+        .cash3{
+            text-align: left;
+            padding-left: 65px;
+        }
+        .cash3 :nth-child(2){
+            color: peru;
+            margin-top: -10px;
+        }
+        .cash3 :nth-child(3){
+            background-color: pink;
+            color: rgb(251, 102, 127);
+            border-radius: 10px;
+            margin-top: -10px;
+        }
+        .cash3 p{
+            font-size: small;
+        }
+
+        #voucher{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 44%;
+            margin: auto;
+            margin-right: 41%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+            padding-bottom: 1%;
+        }
+        .v1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .v2{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #0f0e0e;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+/* .round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+} */
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+/* .round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+} */
+
+/* .round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+} */
+
+
+     .a1{
+            color: white;
+        }
+        .a2{
+            color: white;
+            display: flex;
+            gap: 20px;
+        }
+        .a2 a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        #banks{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            text-align: center;
+            color: gray;
+        }
+        #net{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 140%;
+            padding-bottom: 2%;
+            margin: auto;
+            margin-left: 49%;
+            margin-top: 2%;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 3%;
+            padding-right: 2%;
+        }
+        #net h4{
+            color: rgb(46, 189, 246);
+            padding-top: 2%;
+        }
+        #card{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 44%;
+            margin: auto;
+            margin-right: 41%;
+            margin-top: 20px;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+        }
+        .b1{
+            color: rgb(46, 189, 246);
+            padding-top: 1%; 
+        }
+        .b1 hr{
+            margin-top: -20px;
+        }
+        .b2 h3{
+            color: rgb(46, 189, 246);
+            padding-top: 1%;  
+        }
+        .b2 p{
+            color: rgb(129, 124, 124);
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+        .other select{
+            width: 98%;
+            height: 30px;
+            border-color: rgb(211, 207, 207);
+            border-radius: 8px;
+            color: rgb(120, 118, 118);
+        }
+        #major{
+            display: flex;
+            margin-top: 15px;
+        }
+        #major2{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 25%;
+            margin: auto;
+            margin-left: 29%;
+            margin-top: 10px;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 1%;
+        }
+        #major2 h4{
+            color: rgb(142, 140, 140);
+        }
+        #major2 :nth-child(6){
+            color: rgb(50, 203, 211);
+        }
+        #major2 :nth-child(7){
+            color: rgb(16, 176, 16);
+            background-color: rgb(222, 214, 214);
+            border-radius: 8px;
+        }
+
+        @media only screen and (max-width: 768px) {
+			/* body{
+                width: 500px;
+                margin: 0%;
+            } */
+			#nav{
+                display: none;
+            }
+            .a2{
+                display: none;
+            }
+            #pay{
+                background-color: white;
+                margin: 0%;
+            }
+            .a1 h2{
+                color: black;
+            }
+            #gpay{
+                width: 500px;
+                margin: 0%;
+            }
+            #net{
+                width: 500px;
+                margin: 0%;
+            }
+            .other{
+                display: none;
+            }
+            #major2{
+                display: none;
+            }
+            #card{
+                width: 500px;
+                margin: 0%;
+                margin-top: 20px;
+            }
+            #paytm{
+                width: 500px;
+                margin: 0%;
+            }
+            #ppay{
+                width: 500px;
+                margin: 0%;
+                margin-top: 20px;
+            }
+            #simpl{
+                width: 500px;
+                margin: 0%;
+                margin-top: 20px;
+            }
+            #cash{
+                width: 500px;
+                margin: 0%;
+                margin-top: 20px;
+            }
+            #voucher{
+                width: 500px;
+                margin: 0%;
+                margin-top: 20px;
+            }
+            .round label {
+                    background-color: #fff;
+                    border: 1px solid #0f0e0e;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    height: 18px;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 18px;
+            }
+		}
+    </style>
+</head>
+<body>
+   <div id="nav">
+        <a href="./index.html"><img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1663609483_netmeds-new-logo.svg" alt=""></a>
+   </div> 
+   <div id="pay">
+    <div class="a1">
+    <h2>Payment Details</h2>
+</div>
+<div class="a2">
+    
+    <a href=""><p>Your Cart</p></a>
+    
+    <a href=""><p>Order Review</p></a>
+
+    <a href=""><p>Payment Details</p></a>
+</div>
+   </div>
+
+    <div id="major">
+        <div id="major1">
+   <div id="gpay">
+    <div class="gpay1">
+        <h4>UPI</h4>
+    </div>
+    <div class="gpay2">
+    <a href="https://pay.google.com/gp/w/u/0/home/signup"><img src="https://www.netmeds.com/assets/pgicon/pay_gpay_new.png" alt=""></a>
+    <p>GPay</p>
+    <div class="container">
+        <div class="round">
+          <input type="checkbox" checked id="checkbox" />
+          <label for="checkbox"></label>
+        </div>
+      </div>
+    </div>
+   </div>
+
+    <div id="net">
+    <h4>NET BANKING</h4>
+
+    <div id="banks">
+    <div class="axis">
+        <a href="https://www.axisbank.com/"> <img src="https://www.netmeds.com/assets/pgicon/pay_axis_new.png" alt=""></a>
+        <p>Axis Bank</p>
+    </div>
+    <div class="HDFC">
+        <a href="https://www.hdfcbank.com/"><img src="https://www.netmeds.com/assets/pgicon/pay_hdfc_new.png" alt=""></a>
+        <p>HDFC Bank</p>
+    </div>
+    <div class="ICICI">
+        <a href="https://www.icicibank.com/"><img src="https://www.netmeds.com/assets/pgicon/pay_icici_new.png" alt=""></a>
+        <p>ICICI <br>Netbanking</p>
+    </div>
+    <div class="kotak">
+        <a href="https://www.kotak.com/en/home.html"><img src="https://www.netmeds.com/assets/pgicon/pay_kotak_new.png" alt=""></a>
+        <p>Kotak Bank</p>
+    </div>
+    <div class="state">
+        <a href="https://www.onlinesbi.sbi/"><img src="https://www.netmeds.com/assets/pgicon/pay_sbi_new.png" alt=""></a>
+        <p>State Bank of<br>India</p>
+    </div>
+</div>
+
+    <div class="other">   
+        <select name="" id="">        
+           <option value=""> More Banks</option>
+            <option value="">Airtel Payments Bank</option>
+            <option value="">Andhra Bank</option>
+            <option value="">AU Small Finance Bank</option>
+            <option value="">Axis Bank</option>
+            <option value="">Bandhan Bank</option>
+            <option value="">Bank of Bahrain and Kuwait</option>
+            <option value="">Bank of Baroda</option>
+            <option value="">Bank of Baroda Corporate</option>
+            <option value="">Bank of India</option>
+            <option value="">Bank of Maharashtra</option>
+        </select>  
+    </div>
+   </div>
+</div>
+
+<div id="major2">
+    <h4>PAYMENT DETAILS</h4>
+    <p id="mrp">MRP Total</p>
+    <p id="dis">Additional Discount</p>
+    <p id="maxprice">Total Amount</p>
+    <p id="charge">Shipping/Delivery Charges</p>
+    <p id="price">Total Payable</p>
+    <p id="saving">Total Savings</p> 
+</div>
+</div>
+
+   <div id="card">
+    <div class="b1">
+        <h4>CREDIT & DEBIT CARDS</h4>
+        <hr>
+    </div>
+    <div class="b2">
+        <h3><i class="fa fa-light fa-circle-plus fa-xl" style="color: #72a8ca;"></i> Add New Card</h3>
+        <p>Save and pay with your cards</p>
+    </div>
+   </div>
+
+   <div id="paytm">
+    <div class="paytm1">
+        <h4>PREFERED PAYMENT</h4>
+    </div>
+    <div class="paytm2">
+    <img src="https://www.netmeds.com/assets/pgicon/Paytm_lo.png" alt="">
+    <p>Paytm</p>
+    <a href="https://paytm.com/"><p>LINK</p></a>
+   </div>
+   <div class="paytm3">
+    <p>Pay using Paytm wallet to get cashback between Rs. 30 to Rs. 600. Minimum order value: Rs. 999. TCA</p>
+</div>
+   </div>
+
+   <div id="ppay">
+    <div class="ppay1">
+        <h4>OTHER PAYMENTS</h4>
+    </div>
+    <div class="ppay2">
+    <a href="https://www.phonepe.com/"><img src="https://www.netmeds.com/assets/pgicon/Phone_Pay_lo.png" alt=""></a>
+    <p>PhonePe</p>
+    <div class="container">
+        <div class="round">
+          <input type="checkbox" checked id="checkbox" />
+          <label for="checkbox"></label>
+        </div>
+      </div>
+    </div>
+   </div>
+
+   <div id="simpl">
+    <div class="sim1">
+        <h4>PAY LATER</h4>
+    </div>
+    <div class="sim2">
+    <a href="https://getsimpl.com/"><img src="https://www.netmeds.com/msassets/images/icons/simpl-logo.png" alt=""></a>
+    <p>Simpl</p>
+    <div class="container">
+        <div class="round">
+          <input type="checkbox" checked id="checkbox" />
+          <label for="checkbox"></label>
+        </div>
+      </div>
+    </div>
+    <div class="sim3">
+        <p>Get flat 5% Simpl cashback up to Rs. 750 Valid for new users only. TCA. <br>Link Account is required to complete the payment</p>
+    </div>
+   </div>
+
+   <div id="cash">
+    <div class="cash1">
+        <h4>CASH ON DELIVERY</h4>
+    </div>
+    <div class="cash2">
+    <a href=""><img src="https://www.netmeds.com/assets/pgicon/pay_cod_new.png" alt=""></a>
+    <p>Cash On Delivery</p>
+    
+    <div class="container">
+        <div class="round">
+          <input type="checkbox" checked id="checkbox" />
+          <label for="checkbox"></label>
+        </div>
+      </div>
+    </div>
+    <div class="cash3">
+        <p>Hold On! Pay online and get flat 18% off + get NMS SuperCash up to Rs. 3000. TCA</p>
+        <p>OTP verification needed</p>
+        <p>Choose online Payment to get 50% NMS Super Cash (upto ₹1000)</p>
+    </div>
+   </div>
+
+   <div id="voucher">
+    <div class="v1">
+        <h4>VOUCHER</h4>
+    </div>
+    <div class="v2">
+    <a href=""><img src="https://www.netmeds.com/msassets/images/icons/payment-vouchers-icon.svg" alt=""></a>
+    <div class="container">
+        <div class="round">
+          <input type="checkbox" checked id="checkbox" />
+          <label for="checkbox"></label>
+        </div>
+      </div>
+    </div>
+   </div>
+   
+</body>
+</html>
+<script>
+    var paymentarr=JSON.parse(localStorage.getItem("paymentDetails")) ||[];
+        paymentarr.map(function(Elem,Index){
+    var Mrp=document.getElementById("mrp");
+    console.log(Elem.mrp)
+    Mrp.textContent="MRP Total:₹"+Math.floor(Elem.mrp*Elem.quantity)+".00";
+                                                        
+    var discount=document.getElementById("dis");
+    discount.textContent = "Additional Discount:" + Math.floor(Elem.mrp*Elem.quantity/ Elem.amount%100)+"%off";
+
+    var Total=document.getElementById("maxprice");
+       Total.textContent="Total Amount:₹"+Math.floor(Elem.amount*Elem.quantity)+".00";
+    var charge=document.getElementById("charge")
+   charge.textContent="Shipping/Delivery Charges:₹"+Math.floor(Elem.amount*Elem.quantity*0.03)
+    var price=document.getElementById("price")
+    price.textContent = "Total Payable: ₹" + Math.floor(Math.floor(Elem.amount * Elem.quantity) - Math.floor(Math.floor(Elem.amount*Elem.quantity%100)))+".00";
+    var save=document.getElementById("saving");
+    save.textContent="Total Savings:₹"+(Math.floor(Elem.mrp*Elem.quantity/ Elem.amount * 100))
+        })
+ 
+</script>
+

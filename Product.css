@@ -1,0 +1,175 @@
+#Parent{
+    display: grid;
+  grid-template-columns: repeat(5,5fr);
+  gap:2px;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;;
+    
+    }
+.filter{
+  margin-top: 20px;
+
+    }
+#Parent>div
+{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+  text-align: center;
+  border-radius:10px;
+  width: 90%;
+  height:42vh;
+  margin: auto;
+  margin-bottom: 30px;;
+    
+    }
+#Parent>img{
+  width: 97%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+  margin-top: 5px;;
+  border-radius: 5px;;
+  height: 27vh;;
+    }
+#Parent>button{
+  padding:10px 50px 10px 50px ;
+      border: none;
+  scale: 1.25;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  border-radius: 10px;;  
+  width: 70%; 
+  background-color: #FB641B;
+  color: aliceblue;
+  text-shadow: 2px 2px 4px black;
+    }
+#Parent>p:nth-of-type(1)
+{
+   text-decoration: line-through; 
+   text-shadow: 2px 2px 4px red;  
+      }  
+#Parent>p:nth-of-type(2)
+{
+   color:black;
+   text-shadow: -4px 1px 13px black
+        }
+#Parent>img:nth-of-type(2)
+{
+   width: 50%;  
+   height: 10%; 
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      } 
+#Parent>h2{
+  /* text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; */
+  /* text-shadow: 0 0 3px #FF0000; */
+  /* text-shadow: 2px 2px 8px #FF0000;
+  color:white;
+text-shadow: 2px 2px 4px black; */
+/* text-shadow: -4px 1px 13px black */
+      
+      /*small*/
+      @media only screen and (min-width: 0px) and (max-width: 320px) 
+         #parent {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: 500px;
+        }
+    }
+#Parent> div>div
+{
+        display: flex;
+justify-content: center;
+gap:20px;
+align-items:center;
+      }
+#Btn{
+  border: none;;
+        display: flex;
+ /* padding: 1% 8% 1% 10%; */
+ border-radius: 3px;;
+ background-color: #32AEB1;
+        text-align: center;
+font-size:14px;
+width: 90%;
+font-weight: 400;
+line-height: 21px;
+color: rgb(255, 255, 255);
+cursor: pointer;
+justify-content:center;
+align-items:flex-end;
+margin: auto;
+padding: 8px;
+      }
+
+#supname{
+
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+color: rgb(11, 18, 25);
+text-decoration: none;
+letter-spacing: normal;
+      }
+      /* Default css end */
+      
+      /* 1st nav css start */
+      
+#supmrp{
+  text-decoration: line-through;
+
+  color: rgb(185, 185, 185);
+  font-size: 10px;
+font-weight: 400;
+line-height:14px;
+margin-left:3px;
+margin-top: 14px;
+letter-spacing: normal;
+      }
+
+#supprice{
+
+  font-size: 14px;
+font-weight: 400;
+line-height:20px;
+letter-spacing: normal;
+color: rgb(25, 11, 11);
+display: inline-block;
+      }
+#supoff{
+font-size: 14px;
+font-weight: 400;
+line-height:20px;
+color: #70f000;
+letter-spacing: normal;
+
+      }
+#Home{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color:#FB641B;
+  align-items: center;
+  margin: auto;
+  font-size:100px;
+  margin-bottom: 20px;;
+  text-shadow: -4px 1px 1px black;
+  width: 100%;
+  
+      }
+@media only screen and (max-width: 800px) {
+  #Parent{
+  grid-template-columns: repeat(2,1fr);
+      }
+      .nav2 > input {
+        width: 75%;
+        height: 50px;
+        border: 0px;
+      }
+    }
+@media only screen and (max-width: 500px) {
+  #Parent{
+  grid-template-columns: repeat(1,1fr);
+      }
+      .nav-section-2 div > img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }

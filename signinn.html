@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+    <title>log in</title>
+   <link rel="stylesheet" href="signinn.css">
+   <script src="https://kit.fontawesome.com/09ea9ed7f5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="navbar">
+        
+    <img src="https://www.netmeds.com/assets/gloryweb/images/home-logo-netmeds-new.svg" alt="" />
+    <div id="bar">
+        <input type="text" placeholder="Deliver to 11002" name="" id="">
+        <i class="fa-solid fa-angle-down fa-1x" style="color: #6d7583;"></i>
+        <p style="color: #6d7583">|</p>
+        <input  placeholder="Search for medicine and wellness products.." type="text" name="" id="">
+        <!-- <button id="search" type="submit"><i class="fa-solid fa-magnifying-glass-plus fa-2x" style="color:#2874F0;"></i></button> -->
+    </div>
+    
+    <div>
+        <i class="fa-solid fa-receipt fa-2x"></i>
+        <p>Upload</p>
+    </div>
+    
+    <div>
+
+        <a href="./cart.html"> <i class="fa-solid fa-cart-shopping fa-2x" style="text-decoration: none;"></i></a>
+        
+        <a  style="text-decoration: none;" href="./cart.html "><p>Cart</p></a>
+    </div>
+    
+</div>
+    <div id="parent">
+        <div>
+            <img src="https://www.netmeds.com/images/cms/wysiwyg/cms/1680000865_New_Dest_deal.png" alt="netmeds images">
+        </div>
+        <div>
+            <h3>Sign In / Sign Up</h3>
+            <p>Sign up or Sign in to access your orders, special offers, health tips and more!</p>
+            <div id="userinformation">
+                <label for=""> EMAIL</label>
+                <br>
+                <input type="email" id="email-input" placeholder="Enter your email" />
+                    <br>
+                    <br>
+                <label for="">NAME</label>
+                <br>
+                <input type="text" id="name" placeholder="Enter your name" />
+                <br>
+                <br>
+                <label for=""> LAST NAME</label>
+                <br>
+                <input type="text" id="lastname" placeholder="Enter your last name" />
+            </div>
+          <div id="number_show">
+            <h5>
+              VERIFYING NUMBER</h5>
+              <div >
+                <p>We have sent 6 digit OTP on 91+  <p id="getnumber"></p>  </p>
+                <a href="./signupp.html" >change</a>
+              </div>
+            
+          </div>
+            
+            <form action=""> 
+               <div class="otp-box">
+               
+                <div class="otp-inputs">
+                 
+                  <input type="text" maxlength="1" pattern="[0-9]" />
+                  <input type="text" maxlength="1" pattern="[0-9]" />
+                  <input type="text" maxlength="1" pattern="[0-9]" />
+                  <input type="text" maxlength="1" pattern="[0-9]" />
+                  <input type="text" maxlength="1" pattern="[0-9]" /> 
+                  <input type="text" maxlength="1" pattern="[0-9]" />
+        
+                </div>
+                
+              </div> 
+                <div id="verifybox">
+                  <button id="verify-btn" type="submit">VERIFY</button>
+                </div>
+                
+            </form>
+           
+        </div>
+
+    </div>
+    <div id="noneatnid">
+      <h2>Please rotate your device</h2>
+      <br>
+      <br>
+      <p>We don't support landscape mode yet. Please go back to portrait mode for the best experience</p>
+   </div>
+</body>
+<script>
+   const otpInputs = document.querySelectorAll('.otp-inputs input');
+const verifyBtn = document.querySelector('#verify-btn');
+
+otpInputs.forEach((input, index) => {
+  input.addEventListener('input', (event) => {
+    if (event.target.value && index < otpInputs.length - 1) {
+      otpInputs[index + 1].focus();
+    } else if (!event.target.value && index > 0) {
+      otpInputs[index - 1].focus();
+    }
+  });
+});
+
+const emailInput = document.getElementById('email-input');
+
+emailInput.addEventListener('blur', () => {
+  const email = emailInput.value;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+    alert('Please enter a valid email address');
+  }
+});
+
+verifyBtn.addEventListener('click', () => {
+  const otpValue = Array.from(otpInputs).map(input => input.value).join('');
+  if (otpValue === '') {
+    alert('Please enter the OTP');
+  }
+  else{
+    window.location.href = "./index.html";
+  }
+});
+
+var numshow = JSON.parse(localStorage.getItem("numberinput")) || [];
+displaynumber(numshow);
+function displaynumber(data) {
+  data.map(elem => {
+    document.getElementById("getnumber").textContent = elem.number;
+  });
+}
+
+document.getElementById("verify-btn").addEventListener("click", detailstore)
+
+var detail = JSON.parse(localStorage.getItem("detaillist")) || [];
+function detailstore(){
+
+var email = document.getElementById("email-input").value
+var name = document.getElementById("name").value
+var lastname = document.getElementById("lastname").value
+
+
+var detailobject = {
+   email : email,
+   name : name,
+   lastname : lastname
+}
+
+
+ detail.push(detailobject);
+ localStorage.setItem("detaillist",JSON.stringify(detail));
+console.log(detail);
+
+}
+    </script>
+</html>
